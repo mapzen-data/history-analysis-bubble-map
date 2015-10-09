@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+
+body {
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.footer {
+    color: #888888;
+    font-size: 13px;
+    text-align: right;
+}
+
+#states path {
+  fill: #ccc;
+  stroke: #fff;
+}
+
+circle {
+  fill: steelblue;
+  fill-opacity: .6;
+  stroke: #fff;
+}
+
+circle.selected {
+  fill: red;
+}
+
+circle.over {
+  fill: yellow;
+}
+
+    </style>
+	 <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+	 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" />
+  </head>
+  <body>
+	 <p>
+		<label for="column">Column</label>
+		<select id="column" onchange="update_graph(); update_chart()">
+		  <option value="km_new_roads">Km new roads</option>
+		  <option value="inland_water_area_named">Inland water area named</option>
+		  <option value="km_new_oneways">Km new oneways</option>
+		  <option value="total_road_segments">Total road segments</option>
+		  <option value="building_address_count">Building address count</option>
+		  <option value="building_area">Building area</option>
+		  <option value="inland_water_length_named">Inland water length named</option>
+		  <option value="km_edits_to_existing_oneways">Km edits to existing oneways</option>
+		  <option value="building_count">Building count</option>
+		  <option value="km_new_named_roads">Km new named roads</option>
+		  <option value="km_edits_to_existing_named_roads">Km edits to existing named roads</option>
+		  <option value="km_edits_to_existing_roads">Km edits to existing roads</option>
+		  <option value="inland_water_length">Inland water length</option>
+		  <option value="inland_water_area">Inland water area</option>
+		  <option value="aerialway_count">Aerialway count</option>
+		</select>
+	 </p>
+
+	 <div id="graph"></div>
+
+	 <p>
+		<label for="year">Year :</label>
+		<input type="text" id="year" style="border:0; color:#f6931f; font-weight:bold; " />
+	 </p>
+	 <div id="slider" style="width: 200px;"></div>
+
+	 <div id="chart"></div>
+
+	 <div class="footer">
+		Version: 0.0.1<br/>
+		By Mapzen<br/>
+		Data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> Contributors,<br/>
+		<a href="http://openstreetmap.org/license">available under the ODbL</a>
+	 </div>
+
+	 <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+	 <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.js" charset="utf-8"></script>
+	 <script src="map.js"></script>
+
+</body>
+
+</html>
