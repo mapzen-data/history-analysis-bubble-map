@@ -228,8 +228,7 @@ function update_chart() {
 }
 
 function load_data(city) {
-	 // TODO: put proper, public URL in here!
-	 d3.json("/" + city + ".json", function(json) {
+	 d3.json("http://planet.us-east-1.mapzen.com.s3.amazonaws.com/history-analysis/json/" + city + ".json", function(json) {
 
 		  Object.keys(json).map(function(d) {
 				if (isFinite(+d)) {
